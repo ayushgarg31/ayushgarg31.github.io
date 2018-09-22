@@ -5,6 +5,22 @@
 		<link rel="stylesheet" href="css/index.css">
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/jQuery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $('a[href^="#"]').on('click',function (e) {
+			        e.preventDefault();
+
+			        var target = this.hash;
+			        var $target = $(target);
+
+			        $('html, body').stop().animate({
+			            'scrollTop': $target.offset().top
+			        }, 900, 'swing', function () {
+			            window.location.hash = target;
+			        });
+			    });
+			});
+		</script>
 	</head>
 
 	<body>
@@ -12,11 +28,11 @@
 
 			<div id="header-content">
 				<div id="nav">
-				  	<a href="javascript:void(0)">Contact</a>
+				  	<a href="">Contact</a>
 				  	<a href="javascript:void(0)">Projects</a>
 				  	<a href="javascript:void(0)">Interests</a>
-				  	<a href="javascript:void(0)">About</a>
-				  	<a class="active" href="javascript:void(0)">Home</a>
+				  	<a href="#about">About</a>
+				  	<a class="active" href="#header">Home</a>
 				</div>
 				<div id="content">
 					<h3>Hello World!</h3>
@@ -26,8 +42,8 @@
 			</div>
 		</div>
 		<div id="navbar">
-		  	<a href="javascript:void(0)">Home</a>
-		  	<a href="javascript:void(0)">About</a>
+		  	<a href="#header-content">Home</a>
+		  	<a href="#about">About</a>
 		  	<a href="javascript:void(0)">Interests</a>
 		  	<a href="javascript:void(0)">Projects</a>
 		  	<a href="javascript:void(0)">Contact</a>
@@ -37,6 +53,12 @@
 			window.onscroll = function() {topbar()};
 			var navbar = document.getElementById("navbar");
 		</script>
+
+
+		<div id="about">
+			<h1 style="color: #669df4">About me</h1>
+			<h4 style="color: #4C4D49">My name is Ayush Garg and currently I am pursuing my Bachelor's in Computer Science and Engineering from Indian Institute of Technology (IIT), Gandhinagar. I have gained experience in various fields of computer science which includes Machine Learning, Computer Vision, Natural Language Processing, Deep Learning, Image Processing, Web Development. I love to do research on the topics involving Computer Vision, Natural Language Processing, Deep Learning, Image Processing as much as I enjoy to develop software based on these fields. I am passionate about working in these fields. I love to gain knowlegde on these fields and do projects using them in my free time.
+		</div>
 
 		<div style="overflow: hidden; width: 100%;padding-bottom: 10%;">
 			<div class="project1" style="background-color: #669df4;">
@@ -50,7 +72,8 @@
 					</h4>
 				</div>
 			</div>
-			<div class="project1" style="background-color: #75bc36;margin-top: 0%;padding-bottom: 17%;">
+			<div id="back" style="background-image: url('images/ferrari.jpg');padding-top: 5%;margin-top: -5%;">
+			<div class="project1" style="background-color: rgba(117, 188, 55, 0.7);margin-top: 0%;padding-bottom: 17%;">
 				<div id="project1-content" style="padding-top: 3%; text-align: right;">
 					<h1>License Plate Recognition</h1>
 					<h3>Computer Vision and Image Processing</h3>
@@ -61,6 +84,7 @@
 						The system is robust to the lighting, environment and other stuff which might affect the image and localizes the license plate and the numbers in it very accurately.
 					</h4>
 				</div>
+			</div>
 			</div>
 			<div class="project2" style="background-color: #ba3f3f;">
 				<div id="project2-content">

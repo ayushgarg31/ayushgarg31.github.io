@@ -6,6 +6,7 @@ body {
 
 .header {
   width: 100%;
+  background-attachment: fixed;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,6 +75,11 @@ body {
   color: black;
 }
 
+
+#about {
+  padding: 20px 7.5%;
+}
+
 .project1 {
   width: 150%;
   height: 100%;
@@ -108,4 +114,12 @@ body {
   padding-top: 1%;
   transform: rotate(-7.5deg);
   line-height: 175%;
+}
+
+#back {
+  width: 100%;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
